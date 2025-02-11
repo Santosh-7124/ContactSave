@@ -1,13 +1,12 @@
-import React from "react";
+const handleSaveContact = () => {
+  const vcfFilePath = "/contact.vcf"; // Path to your vCard file
+
+  // Try to open it instead of downloading
+  window.location.href = vcfFilePath;
+};
 
 const SaveContactButton = () => {
-  return (
-    <a href="/contact.vcf" download="contact.vcf">
-      <button>Save Contact</button>
-    </a>
-  );
+  return <button onClick={handleSaveContact}>Save Contact</button>;
 };
 
 export default SaveContactButton;
-
-  
