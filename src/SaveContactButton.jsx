@@ -1,12 +1,12 @@
-const handleSaveContact = () => {
-  const vcfFilePath = "/contact.vcf"; // Path to your vCard file
-
-  // Try to open it instead of downloading
-  window.location.href = vcfFilePath;
-};
-
 const SaveContactButton = () => {
-  return <button onClick={handleSaveContact}>Save Contact</button>;
+  return (
+    <a
+      href="data:text/vcard;charset=utf-8,BEGIN:VCARD%0AVERSION:3.0%0AFN:John Doe%0ATEL:+1234567890%0AEMAIL:john.doe@example.com%0AEND:VCARD"
+      download="JohnDoe.vcf"
+    >
+      <button>Save Contact</button>
+    </a>
+  );
 };
 
 export default SaveContactButton;
